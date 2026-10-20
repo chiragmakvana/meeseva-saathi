@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeeSeva Saathi</title>
+  <meta name="description" content="AI-assisted, multilingual guide to MeeSeva services (prototype).">
+  <meta name="theme-color" content="#0b4a8b">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to main content</a>
+  <header class="top">
+    <div class="top-row">
+      <div class="brand"><b data-i18n="appName">MeeSeva Saathi</b><span data-i18n="tagline">Your guide to MeeSeva services</span></div>
+      <div class="a11y" role="group" aria-label="Accessibility and language">
+        <label class="sr-only" for="lang" data-i18n="language">Language</label>
+        <select id="lang">
+          <option value="te">తెలుగు</option><option value="en">English</option>
+          <option value="hi">हिन्दी</option><option value="ur">اردو</option>
+        </select>
+        <button id="textSize" type="button" aria-label="Text size">A+</button>
+        <button id="contrast" type="button" aria-pressed="false" data-i18n="contrast">High contrast</button>
+        <button id="authBtn" type="button" data-i18n="login">Log in</button>
+      </div>
+    </div>
+  </header>
+  <nav class="main" aria-label="Main">
+    <ul>
+      <li><a href="#/ask" data-i18n="navAsk">Ask</a></li>
+      <li><a href="#/services" data-i18n="navServices">Services</a></li>
+      <li><a href="#/applications" data-i18n="navApps">My applications</a></li>
+      <li><a href="#/centres" data-i18n="navCentres">Centres</a></li>
+      <li><a href="#/alerts"><span data-i18n="navAlerts">Alerts</span><span id="alertBadge" class="badge" hidden></span></a></li>
+    </ul>
+  </nav>
+  <main id="main" tabindex="-1"></main>
+  <div id="live" class="sr-only" aria-live="polite"></div>
+  <footer data-i18n="footer"></footer>
+  <script src="/static/i18n.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

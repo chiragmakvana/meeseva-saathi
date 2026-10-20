@@ -1,0 +1,10 @@
+{
+  "name": "MeeSeva Saathi",
+  "short_name": "Saathi",
+  "description": "AI-assisted, multilingual guide to MeeSeva services (prototype).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#0b4a8b",
+  "lang": "te"
+}
