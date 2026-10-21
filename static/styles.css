@@ -131,3 +131,24 @@ th { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-sp
 .stat-note { font-size: .8rem; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
 @media print { header.top, nav.main, .composer, .a11y, .gov-strip { display: none; } }
+
+/* phones: bottom tab bar instead of a scrolling top nav; compact header */
+@media (max-width: 640px) {
+  header.top { padding: .55rem .8rem; }
+  .top-row { flex-direction: column; align-items: stretch; gap: .5rem; }
+  .brand b { font-size: 1.1rem; white-space: nowrap; } .brand span { font-size: .75rem; }
+  .a11y { justify-content: flex-start; } .a11y select, .a11y button { min-height: 36px; font-size: .8rem; padding: .3rem .5rem; }
+  nav.main { position: fixed; top: auto; bottom: 0; left: 0; right: 0; border-top: 1px solid var(--line); border-bottom: 0; box-shadow: 0 -2px 10px rgba(16,24,40,.08); z-index: 6; }
+  nav.main ul { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; padding: .25rem .25rem calc(.25rem + env(safe-area-inset-bottom)); overflow: visible; }
+  nav.main li:nth-child(7) { display: none; }  /* Why Saathi lives in the footer on phones */
+  nav.main a { flex-direction: column; gap: .15rem; padding: .35rem .1rem; font-size: .62rem; min-height: 56px; justify-content: center; text-align: center; white-space: normal; line-height: 1.1; }
+  nav.main a svg.i { width: 1.45em; height: 1.45em; }
+  .badge { position: absolute; margin: 0; transform: translate(10px, -26px); }
+  nav.main a { position: relative; }
+  main { padding-bottom: 5.5rem; }
+  .composer { bottom: 4.6rem; }
+  footer { padding-bottom: 5rem; }
+  .hero h1 { font-size: 1.35rem; }
+  .facts { grid-template-columns: repeat(3, 1fr); gap: .35rem; } .facts div { padding: .45rem .4rem; font-size: .78rem; } .facts b { font-size: .95rem; }
+  .msg { max-width: 100%; }
+}

@@ -1,0 +1,98 @@
+[
+ {
+  "id": "p00",
+  "slide": "note",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "This is a draft of the team pitch with AI-generated voices standing in for Chirag and Bansi. The team will record this script in their own voices for the submission."
+ },
+ {
+  "id": "p01",
+  "slide": "cover",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "Namaste. I am Chirag Makvana, and with me is Bansi. We are SvaKrit AI from Hyderabad, and this is MeeSeva Saathi: a companion that helps every citizen of Telangana find, prepare for and follow MeeSeva services, in Telugu, English, Hindi or Urdu."
+ },
+ {
+  "id": "p02",
+  "slide": "numbers",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "MeeSeva is one of the largest citizen service networks in the country: 391 services, 5,265 centres, and 32 lakh transactions a month. But the official portal also shows 42 lakh applications pending beyond their time limit since January 2025, and 92 lakh rejections to date. And the portal speaks only English and Telugu."
+ },
+ {
+  "id": "p03",
+  "slide": "citizen",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "Behind those numbers are three questions every citizen struggles with before reaching a counter. Which service do I need? People describe a situation, like my father passed away and we need the pension, not a certificate name. What must I carry? A police SOP records that unclear or missing documents cause delays and repeat visits. And what does my status mean? Under verification tells you nothing about the next step."
+ },
+ {
+  "id": "p04",
+  "slide": "solution",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "Hello, I am Bansi. Saathi answers those three questions in the citizen's own language, by typing or speaking. You describe what you need; Saathi tells you the service, the documents, the fee and the time. It keeps a checklist so you never make a second trip for a missing paper. It explains every status in plain words and tells you what to do next. And the department gets a dashboard of what citizens ask and where they get stuck."
+ },
+ {
+  "id": "p05",
+  "slide": "screens-ask",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "Here is the app. The home screen is Telugu-first, with one question box, popular services and categories. When a citizen writes that their father passed away and they need to claim his pension, the AI replies with the death certificate, the three documents to carry, the fee and time, and points to the family member certificate that comes next. Every answer has a Listen button that reads it aloud."
+ },
+ {
+  "id": "p06",
+  "slide": "screens-track",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "Starting an application creates a document checklist. The citizen ticks each document as they collect it, and cannot submit until the list is complete. After submission, a four-step timeline shows where the application is, with what this means and what to do next in the citizen's language. The catalogue covers 19 services across six categories, with the official MeeSeva timelines."
+ },
+ {
+  "id": "p07",
+  "slide": "ai",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "I built the assistant and the backend. Every question first goes through language detection by script, so a citizen can type Telugu even when the interface is in English. Then Azure OpenAI answers, but only from our service catalogue: it may not invent services, fees or timelines, it must use the official names in the citizen's language, and it must say confirm at the centre. If the AI is slow or unavailable, a multilingual rules engine answers from the same catalogue, so the service is never down. Every question and rating is logged, and feedback is tagged by sentiment and topic."
+ },
+ {
+  "id": "p08",
+  "slide": "tech",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "The backend is FastAPI with a twelve-table database: services, documents, applications with their checklists, every question asked, feedback and notifications. Login is mobile plus OTP with hashed codes and signed sessions; citizens see only their own applications, and officials have a separate role. The whole repository is open, with the research notes, the schema and the test report."
+ },
+ {
+  "id": "p09",
+  "slide": "access",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "I built what the citizen and the officer see. The interface follows GIGW 3.0 and WCAG 2.1 double-A: Telugu, Hindi, Urdu with right-to-left layout, and English; three text sizes; a high-contrast mode; screen-reader labels; keyboard operation; large touch targets; and voice in and out for people who read little. It is light enough to work on a basic phone over 4G."
+ },
+ {
+  "id": "p10",
+  "slide": "officials",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "The officials' dashboard shows the most requested services, questions by language, unanswered questions as service gaps, and feedback tagged by sentiment and topic. An officer updates an application with remarks, and the citizen is notified in their language. I also wrote the 41 automated tests across login, the assistant in four languages, applications, officials and feedback, plus the browser walkthrough."
+ },
+ {
+  "id": "p11",
+  "slide": "fit",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "What makes Saathi different: it works before the citizen applies, not just after. It is grounded, so it never invents a fee or a document. It is the first MeeSeva experience in Hindi and Urdu. And it closes the loop with a feedback dashboard for the ESD Wing. It is API-first, so the same assistant can sit behind the MeeSeva WhatsApp channel launched last November, the portal, and centre kiosks."
+ },
+ {
+  "id": "p12",
+  "slide": "scope",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "Everything on the left works today. Next, we would connect the official service master and live application status, deploy behind WhatsApp with SMS OTP, pre-fill forms from DigiLocker with consent, tune Telugu speech for rural accents, and add department dashboards. The service list, fees and centres in the prototype are sample data; the timelines follow the official revenue catalogue."
+ },
+ {
+  "id": "p13",
+  "slide": "team",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "We are a team of two. Chirag did the research, the AI engine, the backend, security and the database. I did the citizen experience, accessibility, the application flow, the officials' dashboard and testing. SvaKrit AI is a Hyderabad startup, DPIIT-recognised and a member of NVIDIA Inception, Microsoft for Startups and AWS Activate."
+ },
+ {
+  "id": "p14",
+  "slide": "close",
+  "voice": "en-IN-NeerjaNeural",
+  "text": "Our ask is a pilot with the ESD Wing on one district's most requested services, against the real service master, measuring first-time success and repeat visits."
+ },
+ {
+  "id": "p15",
+  "slide": "close",
+  "voice": "en-IN-PrabhatNeural",
+  "text": "The code, research and tests are open at github dot com slash chiragmakvana slash meeseva-saathi. Thank you."
+ }
+]

@@ -5,3 +5,8 @@ __pycache__/
 *.db
 tests/results.xml
 .pytest_cache/
+docs/demo/*.mp4
+docs/demo/*.webm
+docs/demo/audio/
+docs/demo/pitch_audio/
+docs/demo/timestamps.json
