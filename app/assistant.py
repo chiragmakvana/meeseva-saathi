@@ -141,7 +141,7 @@ def answer(db: Session, text: str, lang_hint: str = "en") -> dict:
         try:
             out = _llm_answer(db, text, lang, [svc.code for svc, _ in ranked[:3]])
             svc = db.query(Service).filter(Service.code == out.get("service_code")).first() if out.get("service_code") else None
-            if lang != "en" and out.get("reply"):  # the model sometimes echoes the English reference name; citizens do not need it
+            if out.get("reply"):  # the model sometimes echoes the English reference name; citizens do not need it
                 for s_ in db.query(Service).all():
                     out["reply"] = out["reply"].replace(f" ({s_.name_en})", "").replace(f"({s_.name_en})", "")
             return {
