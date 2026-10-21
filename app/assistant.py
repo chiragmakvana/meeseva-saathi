@@ -87,7 +87,8 @@ def _catalogue_text(db: Session, lang: str) -> str:
     lines = []
     for s in db.query(Service).all():
         docs = "; ".join(sd.document.name(lang) for sd in s.documents)
-        lines.append(f"{s.code} | {s.name(lang)} ({s.name_en}) | {s.department} | eligibility: {s.eligibility_en} | "
+        name = s.name(lang) if lang == "en" else f"{s.name(lang)} ({s.name_en})"
+        lines.append(f"{s.code} | {name} | {s.department} | eligibility: {s.eligibility_en} | "
                      f"documents: {docs} | fee ₹{s.fee_inr} | ~{s.sla_days} working days")
     return "\n".join(lines)
 
@@ -120,8 +121,10 @@ def _llm_answer(db: Session, text: str, lang: str, hints: list[str] | None = Non
         "scholarship or fee reimbursement -> Income Certificate (INC); proof of address for school or a "
         "connection -> Residence Certificate (RES); pension or claims after a death -> Death Certificate "
         "(DTH), then Family Member Certificate (FMC); job or site access -> Police Verification (PVC). "
-        "Use the service and document names exactly as written in the catalogue and never show the "
-        "codes to the citizen. " + hint +
+        "Use the service and document names exactly as written in the catalogue; the English name in parentheses is for your reference only, do not repeat it. Never write service "
+        "codes such as INC or DTH in the reply. Keep the reply under 90 words, in flowing sentences, not a form: "
+        "first one warm sentence confirming what the citizen needs and which service it is, then the "
+        "documents to carry, the fee and time, and one short next step. " + hint +
         f"Reply in {LANG_NAMES[lang]}. Return JSON: "
         '{"service_code": "<code from catalogue or null>", "reply": "<answer for the citizen>"}\n\n'
         "CATALOGUE (code | name | department | eligibility | documents | fee | time):\n" + _catalogue_text(db, lang)

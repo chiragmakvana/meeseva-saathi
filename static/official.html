@@ -4,12 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MeeSeva Saathi – Officials' dashboard</title>
+  <meta name="theme-color" content="#0f4c81">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
   <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
+  <div class="gov-strip">Prototype for the ESD Innovation Challenge · Government of Telangana · Sample data, not an official MeeSeva system</div>
   <header class="top"><div class="top-row">
-    <div class="brand"><b>MeeSeva Saathi</b><span>Officials' dashboard · ESD Wing</span></div>
+    <a class="brand" href="/official" aria-label="Officials' dashboard home">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/></svg></span>
+      <span><b>MeeSeva Saathi</b><span>Officials' dashboard · ESD Wing</span></span>
+    </a>
     <div class="a11y"><a class="btn secondary" href="/">Citizen app</a><button id="logout" type="button" hidden>Log out</button></div>
   </div></header>
   <main id="main" tabindex="-1"></main>

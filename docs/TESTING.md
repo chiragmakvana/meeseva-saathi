@@ -1,6 +1,6 @@
 # Testing
 
-Automated tests: **41 passed, 0 failed** (generated 21 Oct 2026 01:38 by `python -m scripts.test_report`, from the actual pytest run).
+Automated tests: **41 passed, 0 failed** (generated 21 Oct 2026 11:11 by `python -m scripts.test_report`, from the actual pytest run).
 
 Each test runs against a fresh database with the sample catalogue. The AI provider is mocked where a test needs it, so the suite runs offline and gives the same result every time.
 
@@ -33,7 +33,7 @@ Each test runs against a fresh database with the sample catalogue. The AI provid
 | Login | Five wrong OTP attempts, then the right OTP | OTP locked, login rejected | OTP locked, login rejected | Pass |
 | Login | Open applications without a token / with a forged token | Rejected (401) | Rejected (401) | Pass |
 | Login | Update language and district; unknown district | Profile saved; unknown district rejected | Profile saved; unknown district rejected | Pass |
-| Catalogue | List all services | 12 services returned | 12 services returned | Pass |
+| Catalogue | List all services | 19 services returned | 19 services returned | Pass |
 | Catalogue | List services in Telugu | Telugu service names | Telugu service names | Pass |
 | Catalogue | Search services with a Telugu word | Caste certificate ranked first | Caste certificate ranked first | Pass |
 | Catalogue | Open a service; open a non-existent service | Details with documents; 404 for missing | Details with documents; 404 for missing | Pass |

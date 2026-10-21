@@ -3,7 +3,7 @@
 
 def test_lists_all_services(client):
     svcs = client.get("/api/services").json()
-    assert len(svcs) == 12
+    assert len(svcs) == 19
 
 
 def test_service_names_localised(client):

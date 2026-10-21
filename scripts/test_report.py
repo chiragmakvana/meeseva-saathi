@@ -29,7 +29,7 @@ CASES = {
     "test_detect_lang_scripts": ("AI assistant", "Detect language from Telugu, Devanagari, Urdu and Latin script", "Correct language codes"),
     "test_ai_engine_used_when_configured": ("AI assistant", "Ask with the AI engine configured", "AI answer used, service card attached"),
     "test_falls_back_to_rules_when_ai_fails": ("AI assistant", "AI engine times out", "Falls back to the rules engine; citizen still gets the answer"),
-    "test_lists_all_services": ("Catalogue", "List all services", "12 services returned"),
+    "test_lists_all_services": ("Catalogue", "List all services", "19 services returned"),
     "test_service_names_localised": ("Catalogue", "List services in Telugu", "Telugu service names"),
     "test_search_in_telugu": ("Catalogue", "Search services with a Telugu word", "Caste certificate ranked first"),
     "test_service_detail_and_missing": ("Catalogue", "Open a service; open a non-existent service", "Details with documents; 404 for missing"),
