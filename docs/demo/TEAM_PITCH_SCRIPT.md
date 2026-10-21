@@ -60,7 +60,7 @@ to do next’ for every status, with a notification when an officer changes it. 
 the most-requested services, questions by language, unanswered questions as service gaps, and AI-tagged
 feedback.
 
-I wrote the test cases: 41 automated tests covering login, the assistant in four languages, applications,
+I wrote the test cases: 42 automated tests covering login, the assistant in four languages, applications,
 officials and feedback, plus a browser walkthrough. The test report lists each case with expected and actual
 results and the bugs we found and fixed.”
 

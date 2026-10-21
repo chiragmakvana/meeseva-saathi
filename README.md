@@ -70,7 +70,7 @@ explanation layer, built API-first so the same assistant can sit behind WhatsApp
 | AI | Azure OpenAI (gpt-5-mini) with a built-in multilingual rules engine as fallback |
 | Frontend | HTML, CSS, vanilla JavaScript (no build step), Noto fonts, Web Speech API for voice |
 | Auth | Mobile number + 6-digit OTP (hashed, 5-minute expiry, 5 attempts); signed session tokens; citizen and official roles |
-| Tests | pytest + FastAPI TestClient (41 automated tests); browser walkthrough with Playwright |
+| Tests | pytest + FastAPI TestClient (42 automated tests); browser walkthrough with Playwright |
 
 ## Run it
 
@@ -110,7 +110,7 @@ No keys or passwords are stored in this repository.
 ### Tests
 
 ```bash
-pytest                         # 41 tests, runs offline
+pytest                         # 42 tests, runs offline
 python -m scripts.test_report  # re-runs the tests and regenerates docs/TESTING.md
 ```
 

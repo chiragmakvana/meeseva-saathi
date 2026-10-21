@@ -1,6 +1,6 @@
 # Testing
 
-Automated tests: **41 passed, 0 failed** (generated 21 Oct 2026 11:11 by `python -m scripts.test_report`, from the actual pytest run).
+Automated tests: **42 passed, 0 failed** (generated 21 Oct 2026 16:24 by `python -m scripts.test_report`, from the actual pytest run).
 
 Each test runs against a fresh database with the sample catalogue. The AI provider is mocked where a test needs it, so the suite runs offline and gives the same result every time.
 
@@ -25,6 +25,7 @@ Each test runs against a fresh database with the sample catalogue. The AI provid
 | AI assistant | Detect language from Telugu, Devanagari, Urdu and Latin script | Correct language codes | Correct language codes | Pass |
 | AI assistant | Ask with the AI engine configured | AI answer used, service card attached | AI answer used, service card attached | Pass |
 | AI assistant | AI engine times out | Falls back to the rules engine; citizen still gets the answer | Falls back to the rules engine; citizen still gets the answer | Pass |
+| AI assistant | Model echoes a service code or name in brackets | Echo removed; other brackets kept | Echo removed; other brackets kept | Pass |
 | Login | Request OTP with an invalid mobile number | Rejected with a validation error (422) | Rejected with a validation error (422) | Pass |
 | Login | Log in with a valid OTP (first time) | Account created, session token issued, profile returned | Account created, session token issued, profile returned | Pass |
 | Login | Mobile number entered with +91 and spaces | Normalised and accepted | Normalised and accepted | Pass |

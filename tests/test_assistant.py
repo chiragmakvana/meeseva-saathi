@@ -64,3 +64,12 @@ def test_falls_back_to_rules_when_ai_fails(client, monkeypatch):
     monkeypatch.setattr(assistant, "_llm_answer", boom)
     r = client.post("/api/assistant/ask", json={"text": "birth certificate", "lang": "en"}).json()
     assert r["source"] == "rules" and r["service"]["code"] == "BIR"
+
+
+def test_echoed_names_and_codes_removed(client):
+    from app.database import SessionLocal
+    from app.models import Service
+    with SessionLocal() as db:
+        svcs = db.query(Service).all()
+    text = "You need a Death Certificate (DTH) (service: Death Certificate) (confirm at the centre)."
+    assert assistant._strip_echoes(text, svcs) == "You need a Death Certificate (confirm at the centre)."

@@ -63,7 +63,7 @@
   "id": "p10",
   "slide": "officials",
   "voice": "en-IN-NeerjaNeural",
-  "text": "The officials' dashboard shows the most requested services, questions by language, unanswered questions as service gaps, and feedback tagged by sentiment and topic. An officer updates an application with remarks, and the citizen is notified in their language. I also wrote the 41 automated tests across login, the assistant in four languages, applications, officials and feedback, plus the browser walkthrough."
+  "text": "The officials' dashboard shows the most requested services, questions by language, unanswered questions as service gaps, and feedback tagged by sentiment and topic. An officer updates an application with remarks, and the citizen is notified in their language. I also wrote the 42 automated tests across login, the assistant in four languages, applications, officials and feedback, plus the browser walkthrough."
  },
  {
   "id": "p11",

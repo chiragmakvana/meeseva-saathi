@@ -45,14 +45,13 @@ await app().evaluate(() => window.scrollBy({ top: -300, behavior: "smooth" })); 
 
 begin("unknown"); await type("#askForm-q", "how do I renew my passport", 45); await click("#askForm button[type=submit]"); await sleep(4500); await end("unknown");
 
-begin("login"); await app().evaluate(() => { location.hash = "#/login"; }); await sleep(1200);
+const svcs = await (await p.request.get(`${B}/api/services`)).json(); const res = svcs.find((s) => s.code === "RES");
+begin("login"); await app().evaluate((h) => { location.hash = h; }, `#/login?next=${encodeURIComponent(`#/new/${res.id}`)}`); await sleep(1200);
 await type("#m", "9876543210", 80); await click("#f1 button"); await sleep(1500);
 const otp = (await f.locator("#demo").textContent()).match(/(\d{6})/)[1];
 await type("#o", otp, 120); await type("#n", "Ravi Kumar", 60); await sleep(800); await click("#f2 button"); await sleep(1500); await end("login");
 
-begin("checklist");
-const svcs = await (await p.request.get(`${B}/api/services`)).json(); const res = svcs.find((s) => s.code === "RES");
-await app().evaluate((id) => { location.hash = `#/new/${id}`; }, res.id); await sleep(1500);
+begin("checklist"); await sleep(600);
 await click("#fa button"); await sleep(2000);
 const n = await f.locator(".check input").count();
 for (let i = 0; i < n; i++) { await app().evaluate((i) => document.querySelectorAll(".check input")[i].click(), i); await sleep(1300); }

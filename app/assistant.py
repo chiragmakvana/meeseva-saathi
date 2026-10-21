@@ -132,6 +132,21 @@ def _llm_answer(db: Session, text: str, lang: str, hints: list[str] | None = Non
     return _llm_chat(system, text)
 
 
+_ECHO_PREFIX = re.compile(r"^\s*(?:service\s*code|service|code)?\s*[:\-–]?\s*", re.I)
+
+
+def _strip_echoes(reply: str, services) -> str:
+    """Drop bracketed echoes of a service code or English name that the model likes to add, e.g. "(DTH)",
+    "(Death Certificate)" or "(service: Death Certificate)". Other brackets, like "(confirm at the centre)", stay."""
+    known = {s.code.lower() for s in services} | {s.name_en.lower() for s in services}
+
+    def drop(m):
+        inner = _ECHO_PREFIX.sub("", m.group(1)).strip().lower()
+        return "" if inner in known else m.group(0)
+
+    return re.sub(r"\s*\(([^()]{1,80})\)", drop, reply)
+
+
 def answer(db: Session, text: str, lang_hint: str = "en") -> dict:
     """Answer a citizen question. Returns reply text, the matched service card, suggestions and the engine used."""
     lang = detect_lang(text, lang_hint)
@@ -141,12 +156,8 @@ def answer(db: Session, text: str, lang_hint: str = "en") -> dict:
         try:
             out = _llm_answer(db, text, lang, [svc.code for svc, _ in ranked[:3]])
             svc = db.query(Service).filter(Service.code == out.get("service_code")).first() if out.get("service_code") else None
-            if out.get("reply"):  # the model sometimes echoes the English reference name or the code; citizens need neither
-                all_services = db.query(Service).all()
-                for s_ in all_services:
-                    out["reply"] = out["reply"].replace(f" ({s_.name_en})", "").replace(f"({s_.name_en})", "")
-                codes = "|".join(re.escape(s_.code) for s_ in all_services)
-                out["reply"] = re.sub(rf"\s*\((?:{codes})\)", "", out["reply"])
+            if out.get("reply"):
+                out["reply"] = _strip_echoes(out["reply"], db.query(Service).all())
             return {
                 "reply": out.get("reply") or (compose_reply(svc, lang) if svc else pick(NOT_FOUND, lang)),
                 "lang": lang, "service": service_card(svc, lang) if svc else None,
