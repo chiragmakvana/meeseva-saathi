@@ -10,3 +10,4 @@ docs/demo/*.webm
 docs/demo/audio/
 docs/demo/pitch_audio/
 docs/demo/timestamps.json
+*.pptx
