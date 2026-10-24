@@ -11,3 +11,5 @@ docs/demo/audio/
 docs/demo/pitch_audio/
 docs/demo/timestamps.json
 *.pptx
+!docs/demo/SvaKritAI_FinalPitchDeck.pdf
+!docs/demo/SvaKritAI_TeamPitch_Script.pdf

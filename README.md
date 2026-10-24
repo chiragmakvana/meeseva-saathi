@@ -18,6 +18,12 @@ More screens in [`docs/screenshots/`](docs/screenshots/).
 
 ---
 
+## Demo submission (Innovation Day, 25 October 2026)
+
+Shortlisted for the Innovation Day & Grand Finale (IIIT Hyderabad, 25 Oct 2026). The complete demo pack is on [`docs/demo/SUBMISSION.md`](docs/demo/SUBMISSION.md): the [final pitch deck](docs/demo/SvaKritAI_FinalPitchDeck.pdf), the [demo video (3:29)](https://github.com/chiragmakvana/meeseva-saathi/releases/download/demo-2026-10-25/SvaKritAI_Demo.mp4), the [team pitch video (7:56)](https://github.com/chiragmakvana/meeseva-saathi/releases/download/demo-2026-10-25/SvaKritAI_TeamPitch.mp4), the pitch script and the live-demo runbook. Videos are attached to release [`demo-2026-10-25`](https://github.com/chiragmakvana/meeseva-saathi/releases/tag/demo-2026-10-25).
+
+---
+
 ## The problem, from the research
 
 MeeSeva handles about **32.5 lakh transactions a month across 391 services and 5,265 centres**, yet the
@@ -138,7 +144,7 @@ app/
 static/              citizen app (index.html, app.js, i18n.js), officials' dashboard, styles
 tests/               pytest suite
 db/schema.sql        database DDL (generated)
-docs/                research, API, database, testing, screenshots
+docs/                research, API, database, testing, screenshots; docs/demo = pitch deck, scripts, runbook, submission page
 scripts/             schema export, test report
 ```
 
